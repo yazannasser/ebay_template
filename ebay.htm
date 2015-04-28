@@ -1,0 +1,188 @@
+<!--{% if False %}-->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!--{% endif %}-->
+<style type="text/css">
+
+/* Dead Simple Grid NO NEST(c) 2012 Vladimir Agafonkin */ 
+.col {padding: 0 1.5em; } .row:before, .row:after {content: ""; display: table; } .row:after {clear: both; } @media only screen {.col {float: left; width: 100%; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; } }
+
+/*** The Grid ***/
+
+/* you only need width to set up columns; all columns are 100%-width by default, so we start
+   from a one-column mobile layout and gradually improve it according to available screen space */
+
+@media only screen and (min-width: 48em) {
+	.item-descr, .important-things {width: 50%;}
+}
+
+@media only screen and (min-width: 72em) {
+	.item-descr {width: 66.66%;}
+	.important-things {width: 33.33%;}
+}
+
+/*** Mobile First Style (Mono-col Style) ***/
+
+.universe {
+	margin: 0 auto; 
+	padding:0; 
+	font-size: 16px; 
+	font-family: arial, sans-serif;
+	line-height: 1.3}
+
+.col {padding:0;}
+
+.col p, .col ul, .col h2, .col h3 {margin-top: 0;}
+
+.row#header {
+	background-color: #212174; 
+	border-bottom: 0.4em solid #B80016;  
+	padding:0.4em 0 0.2em 1.5em;
+	color: #fff;}
+
+.row#header h1 {margin:0; padding:0;}
+
+.row#main-content {padding: 1em 1.5em;}
+
+.col.item-descr {
+	padding: 0 0 1.5em 0; 
+	border-bottom: 1px dotted #cccccc;}
+
+.col.important-things {padding:1.5em 0 0 0;}
+
+.row#footer {
+	height: 0em; 
+	border-bottom: 0.4em solid #B80016; 
+	border-top: 0.3em solid #212174;}
+
+
+ul#accordion {
+    margin:0;
+    padding:0;}
+ 
+ul#accordion li {
+    list-style:none;
+    border:1px 1px 1px 1px #efefef solid;}
+ 
+ul#accordion li h3 {
+    margin:0;
+    padding:1em 1.5em;
+    font-size:1em;
+    color:#212174;
+    border-bottom:1px #efefef solid;
+	background-color:#cccccc;}   
+ 
+ul#accordion li a {text-decoration:none;}   
+ 
+ul#accordion li .content {
+    height: 0;
+    overflow:hidden;
+    border: 0 solid #cccccc;
+    border-width: 0 1px;
+	}   
+ 
+ul#accordion li .content:target {height:auto;}
+ 
+ul#accordion li .content p {padding:1em 1.5em 0 1.5em;}
+
+ul#accordion li .content a {
+	color: #B80016;
+	padding: 0.5em 0 0 1em;}    	
+
+/*** (Bi-col Style) ***/
+
+@media only screen and (min-width: 48em) { /* 48*16px */
+
+	.universe {font-size: 18px}
+
+	.col.item-descr {
+		padding: 0 1.5em 0 0; 
+		border: none;
+		border-right: 1px dotted #cccccc;
+		min-height: 10em;}
+
+	.col.important-things {
+		padding: 0 0 0 1.5em;
+		border-left: 1px dotted #cccccc;}
+}
+
+@media only screen and (min-width: 72em) { /* 72x16px */
+	.universe {max-width: 1400px; font-size: 20px}
+}
+
+
+
+
+
+</style>
+<div class="universe">
+
+	<div id="header" class="row">
+		<div class="col"><h1>Garofoli Spa</h1></div>
+	</div>
+
+	<div id="main-content" class="row">
+		<div class="col item-descr">
+			<p>Descrizione del prodotto, bla bla bla bla bla</p>
+			<h4>Caratteristiche tecniche</h4>
+			<ul>
+				<li>Caratteristica 1</li>
+				<li>Caratteristica 2</li>
+				<li>Caratteristica 3</li>				
+			</ul>
+
+		</div>
+
+		<div class="col important-things">
+			<h3>Cose importanti da sapere</h3>
+			<ul>
+				<li>Se manca la <b>foto</b> del prodotto, puoi chiedermi di farne una.</li>
+				<li>Nel pacco troverai lo scontrino, se ti occorre la <b>fattura</b> compila questo <a href="http://garofoli.ftpimg.eu/invoice_form">modulo</a> PRIMA del pagamento.</li>
+				<li>A volte è possibile uno <b>sconto</b>, scrivimi per sapere se c'è su questo prodotto.</li>
+				<li>You can ask me anything in <b>English</b>.</li>
+			</ul>
+
+			<p></p>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col">
+			<ul id="accordion">
+			    <li>
+			        <a href="#tab0"><h3>Contatti</h3></a>
+			        <section id="tab0" class="content">
+			        <p><b>Email</b> info.garofoli@gmail.com; nei giorni feriali rispondo entro poche ore.<br>
+			        <b>Telefono</b> 0835/385078 dalle 16:00 alle 17:30; Lun - Ven; fuori da questo orario lasciare il numero al centralino per essere richiamati.</p>
+			        	<p>Non fornisco assistenza tecnica sul materiale</p>
+			        </section>
+			    </li>				
+			    <li>
+			        <a href="#tab1"><h3>Pagamento e Spedizione</h3></a>
+			        <section id="tab1" class="content">
+			        <p>L'azienda accetta pagamenti con PayPal e Bonifico Bancario e spedisce con corriere GLS entro 2 gg dal pagamento (3 gg dal Bonifico). GLS consegna in tutta Italia in 1 o 2 gg (fino a 5 gg nelle isole e in Calabria), io monitoro la spedizione fino alla consegna. I giorni si intendono lavorativi.</p>
+			        <p><b>L'azienda non spedisce in Sardegna e nelle Isole minori (in Sicilia sì)</b> per gli elevati costi di trasporto. Se interessato lo stesso, contattami prima dell'acquisto per il pagamento di un supplemento di 5,00 EUR.</p>
+			        </section>
+			    </li>
+			    <li>
+			        <a href="#tab2"><h3>Restituzione e garanzia sui prodotti</h3></a>
+			        <section id="tab2" class="content">
+			        <p>L'acquirente può recedere dal contratto d'acquisto senza indicarne le ragioni, comunicandocelo via email entro 30 gg dal ricevimento della merce purchè sia stata custodita ed eventualmente usata con normale diligenza. Le spese per la restituzione della merce sono a carico dell'acquirente.</p>
+
+<p>I prodotti sono tutti nuovi e con garanzia legale di 2 anni per difetti di conformità.</p>
+			        </section>
+			    </li>
+			    <li>
+			        <a href="#tab3"><h3>Consigli per un acquisto soddisfacente</h3></a>
+			        <section id="tab3" class="content">
+  						<ul>
+  							<li>Non comprare MAI se hai dei dubbi sul prodotto, magari chiedi prima una foto reale dell'oggetto che riceverai a casa.</li>
+  							<li>Non comprare MAI se hai fretta di ricevere la merce, può capitare che la ricevi il giorno dopo la tua scadenza importante.</li>
+  							<li>Non comprare e poi sparire, leggi la email ed eventualmente rispondi al telefono fino a quando non ricevi la merce.</li>
+  						</ul>
+			        </section>
+			    </li>
+			    			   
+			</ul>
+		</div>
+	</div>
+	<div id="footer" class="row"><div class="col"></div></div>
+</div>
